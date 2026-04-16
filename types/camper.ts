@@ -47,6 +47,15 @@ export interface CamperListResponse {
   campers: CamperListItem[];
 }
 
+export interface CamperFilters {
+  page?: number;
+  perPage?: number;
+  location?: string;
+  form?: CamperForm;
+  transmission?: Transmission;
+  engine?: Engine;
+}
+
 // GET /campers/{camperId}
 export interface CamperImage {
   id: string;
