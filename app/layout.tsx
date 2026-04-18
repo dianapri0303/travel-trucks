@@ -4,6 +4,8 @@ import { Toaster } from 'react-hot-toast';
 import QueryProvider from '@/providers/QueryProvider';
 import './globals.css';
 
+import Header from '@/components/Header/Header';
+
 const inter = Inter({ subsets: ['latin'], variable: '--font-family' });
 
 export const metadata: Metadata = {
@@ -22,6 +24,7 @@ export default function RootLayout({
       <body className={inter.variable}>
         <QueryProvider>
           <Toaster position="top-right" />
+          <Header />
           {children}
         </QueryProvider>
       </body>
