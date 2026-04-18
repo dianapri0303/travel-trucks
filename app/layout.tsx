@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
-import QueryProvider from '@/providers/QueryProvider';
+import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
 import './globals.css';
 
 import Header from '@/components/Header/Header';
@@ -22,11 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <QueryProvider>
+        <TanStackProvider>
           <Toaster position="top-right" />
           <Header />
           {children}
-        </QueryProvider>
+        </TanStackProvider>
       </body>
     </html>
   );
