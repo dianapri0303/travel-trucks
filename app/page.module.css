@@ -1,0 +1,72 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  padding: 195px 64px 120px;
+  background-image: url('/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(15, 23, 42, 0.72) 0%,
+    rgba(15, 23, 42, 0.38) 34%,
+    rgba(15, 23, 42, 0.14) 56%,
+    rgba(15, 23, 42, 0) 78%
+  );
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: 571px;
+  max-width: 100%;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 571px;
+  max-width: 100%;
+}
+
+.title {
+  margin: 0;
+  color: var(--inputs);
+  font-family: var(--font-family);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
+.subtitle {
+  width: 550px;
+  max-width: 100%;
+  margin: 0;
+  color: var(--inputs);
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
+.heroButton {
+  min-width: 173px;
+  padding-inline: 48px;
+}

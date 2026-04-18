@@ -47,6 +47,5 @@
 }
 
 .activeLink {
-  color: var(--main);
+  color: var(--grey-green);
 }
-
