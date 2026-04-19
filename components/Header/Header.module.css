@@ -1,4 +1,7 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background-color: var(--inputs);
   border-bottom: 1px solid var(--badges);
 }
@@ -8,6 +11,8 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 0 64px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .logo {

@@ -1,0 +1,221 @@
+.panel {
+  border-radius: 20px;
+  padding: 24px;
+  width: 360px;
+  height: 840px;
+  background: var(--inputs);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* location */
+
+.locationBox {
+  width: 312px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.locationLabel {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+
+.locationBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 16px 20px;
+  width: 312px;
+  height: 56px;
+  background: var(--white);
+  color: var(--gray);
+}
+
+.mapIcon {
+  flex-shrink: 0;
+  color: var(--gray);
+}
+
+.mapIcon.active {
+  color: var(--main);
+}
+
+.locationBadge:focus-within {
+  outline: 2px solid var(--grey-green);
+  outline-offset: 0;
+}
+
+.locationInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+}
+
+.locationInput::placeholder {
+  color: var(--gray);
+}
+
+/* filters */
+
+.filtersBox {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.filtersTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+  margin-bottom: 24px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filterGroup + .filterGroup {
+  margin-top: 24px;
+}
+
+.groupLabel {
+  float: left;
+  width: 100%;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: fit-content;
+  height: 24px;
+}
+
+.radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease;
+}
+
+.radio:checked + .circle {
+  border-color: var(--grey-green);
+}
+
+.radio:checked + .circle::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--grey-green);
+}
+
+.radio:focus-visible + .circle {
+  outline: 2px solid var(--grey-green);
+  outline-offset: 2px;
+}
+
+.optionText {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+}
+
+/* btns */
+
+.buttonsBox {
+  width: 312px;
+  height: 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.searchBtn {
+  width: 312px;
+}
+
+.clearBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  padding: 16px 32px;
+  width: 312px;
+  height: 56px;
+  background: var(--white);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--main);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.clearBtn:hover,
+.clearBtn:focus-visible {
+  border-color: var(--grey-green);
+}

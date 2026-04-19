@@ -4,6 +4,8 @@ import css from './Button.module.css';
 
 type ButtonProps = {
   href?: string;
+  target?: '_blank' | '_self';
+  rel?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: React.ReactNode;
   type?: 'button' | 'submit' | 'reset';
@@ -12,16 +14,23 @@ type ButtonProps = {
 
 export default function Button({
   href,
+  target,
+  rel,
   onClick,
   children,
   type = 'button',
-  className = '',
+  className,
 }: ButtonProps) {
   const buttonClassName = clsx(css.button, className);
 
   if (href) {
     return (
-      <Link href={href} className={buttonClassName}>
+      <Link
+        href={href}
+        target={target}
+        rel={rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)}
+        className={buttonClassName}
+      >
         {children}
       </Link>
     );

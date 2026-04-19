@@ -60,12 +60,7 @@ export default function CamperCard({ camper }: Props) {
             <h2 className={css.name}>{camper.name}</h2>
             <div className={css.metaRow}>
               <div className={css.rating}>
-                <svg
-                  width={16}
-                  height={16}
-                  aria-hidden="true"
-                  focusable="false"
-                >
+                <svg width={16} height={16} aria-hidden="true">
                   <use href="/icons/sprite.svg#icon-star" />
                 </svg>
                 <span>
@@ -73,15 +68,10 @@ export default function CamperCard({ camper }: Props) {
                 </span>
               </div>
               <div className={css.location}>
-                <svg
-                  width={16}
-                  height={16}
-                  aria-hidden="true"
-                  focusable="false"
-                >
+                <svg width={16} height={16} aria-hidden="true">
                   <use href="/icons/sprite.svg#icon-map" />
                 </svg>
-                <span>{camper.location}</span>
+                <span>{camper.location.split(', ').reverse().join(', ')}</span>
               </div>
             </div>
           </div>
@@ -97,7 +87,7 @@ export default function CamperCard({ camper }: Props) {
         <div className={css.badges}>
           {badges.map(({ icon, label }) => (
             <span key={`${icon}-${label}`} className={css.badge}>
-              <svg width={20} height={20} aria-hidden="true" focusable="false">
+              <svg width={20} height={20} aria-hidden="true">
                 <use href={`/icons/sprite.svg#${icon}`} />
               </svg>
               <span>{label}</span>
@@ -105,7 +95,11 @@ export default function CamperCard({ camper }: Props) {
           ))}
         </div>
 
-        <Button href={`/catalog/${camper.id}`} className={css.showMore}>
+        <Button
+          href={`/catalog/${camper.id}`}
+          target="_blank"
+          className={css.showMore}
+        >
           Show more
         </Button>
       </div>

@@ -1,5 +1,15 @@
 .page {
+  display: flex;
+  gap: 64px;
   padding: 40px 64px;
+  align-items: flex-start;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.results {
+  flex: 1;
 }
 
 .list {
@@ -12,7 +22,38 @@
 }
 
 .message {
-  padding: 40px 64px;
   font-size: 16px;
   color: var(--text);
+}
+
+.loadMoreBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.loadMoreBtn {
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  padding: 16px 32px;
+  height: 56px;
+  background: var(--white);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--main);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.loadMoreBtn:hover,
+.loadMoreBtn:focus-visible {
+  border-color: var(--grey-green);
+}
+
+.loadMoreBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

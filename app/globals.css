@@ -8,13 +8,11 @@
   --gray-light: #dadde1;
   --rating: #ffc531;
   --grey-green: #829b91;
-  --olive: #f0f1f1;
   --green-hover: #6d7b75;
 }
 
 html {
   height: 100%;
-  background: var(--white);
 }
 
 html,
