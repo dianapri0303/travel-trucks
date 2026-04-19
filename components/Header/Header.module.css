@@ -1,7 +1,4 @@
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   background-color: var(--inputs);
   border-bottom: 1px solid var(--badges);
 }

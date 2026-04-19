@@ -5,6 +5,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { getCampers } from '@/lib/api';
 import CamperCard from '@/components/CamperCard/CamperCard';
 import FiltersPanel from '@/components/FiltersPanel/FiltersPanel';
+import Spinner from '@/components/Spinner/Spinner';
 import type { CamperFilters } from '@/types/camper';
 import css from './page.module.css';
 
@@ -34,7 +35,11 @@ export default function CatalogPage() {
       <FiltersPanel onSearch={setFilters} />
 
       <section className={css.results}>
-        {isLoading && <p className={css.message}>Loading...</p>}
+        {isLoading && (
+          <div className={css.loaderBox}>
+            <Spinner />
+          </div>
+        )}
         {isError && <p className={css.message}>Something went wrong.</p>}
         {!isLoading && !isError && campers.length === 0 && (
           <p className={css.message}>No campers found.</p>
@@ -55,7 +60,7 @@ export default function CatalogPage() {
                   onClick={() => fetchNextPage()}
                   disabled={isFetchingNextPage}
                 >
-                  {isFetchingNextPage ? 'Loading...' : 'Load more'}
+                  {isFetchingNextPage ? <Spinner size="sm" /> : 'Load more'}
                 </button>
               </div>
             )}

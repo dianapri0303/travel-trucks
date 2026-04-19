@@ -1,4 +1,9 @@
+import type { Metadata } from 'next';
 import Button from '@/components/Button/Button';
+
+export const metadata: Metadata = {
+  title: 'Home | TravelTrucks',
+};
 import css from './page.module.css';
 
 export default function HomePage() {

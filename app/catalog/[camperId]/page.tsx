@@ -18,6 +18,7 @@ import {
   FORM_LABELS,
   AMENITY_LABELS,
 } from '@/lib/labels';
+import Spinner from '@/components/Spinner/Spinner';
 import ReviewCard from '@/components/ReviewCard/ReviewCard';
 import BookingForm from '@/components/BookingForm/BookingForm';
 import css from './page.module.css';
@@ -45,7 +46,9 @@ export default function CamperDetailsPage() {
   if (isLoading) {
     return (
       <main className={css.page}>
-        <p className={css.message}>Loading...</p>
+        <div className={css.loaderBox}>
+          <Spinner />
+        </div>
       </main>
     );
   }
@@ -89,15 +92,17 @@ export default function CamperDetailsPage() {
             navigation
             className={css.mainSwiper}
           >
-            {camper.gallery.map(img => (
+            {camper.gallery.map((img, i) => (
               <SwiperSlide key={img.id}>
                 <div className={css.mainImageFrame}>
                   <Image
                     src={img.original}
                     alt={camper.name}
                     fill
+                    sizes="638px"
                     style={{ objectFit: 'cover' }}
-                    priority
+                    priority={i === 0}
+                    loading={i === 0 ? 'eager' : undefined}
                   />
                 </div>
               </SwiperSlide>
@@ -113,13 +118,16 @@ export default function CamperDetailsPage() {
             watchSlidesProgress
             className={css.thumbsSwiper}
           >
-            {camper.gallery.map(img => (
+            {camper.gallery.map((img, i) => (
               <SwiperSlide key={img.id}>
                 <div className={css.thumbWrapper}>
                   <Image
                     src={img.thumb}
                     alt=""
                     fill
+                    sizes="135px"
+                    priority={i === 0}
+                    loading={i === 0 ? 'eager' : undefined}
                     style={{ objectFit: 'cover' }}
                   />
                 </div>

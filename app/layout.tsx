@@ -2,14 +2,13 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
-import './globals.css';
-
 import Header from '@/components/Header/Header';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-family' });
 
 export const metadata: Metadata = {
-  title: 'TravelTrucks - Camper Rentals',
+  title: 'TravelTrucks | Camper Rentals',
   description:
     'Find and book your perfect campervan. Browse our catalog of campers available across Ukraine.',
 };

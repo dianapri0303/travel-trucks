@@ -10,6 +10,12 @@
   color: var(--text);
 }
 
+.loaderBox {
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+}
+
 .topSection {
   display: flex;
   gap: 24px;
