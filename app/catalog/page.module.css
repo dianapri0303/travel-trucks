@@ -1,6 +1,6 @@
 .page {
   display: flex;
-  gap: 64px;
+  gap: 65px;
   padding: 40px 64px;
   align-items: flex-start;
   max-width: 1440px;
