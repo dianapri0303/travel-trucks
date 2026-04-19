@@ -1,0 +1,127 @@
+.card {
+  display: flex;
+  gap: 24px;
+  border-radius: 16px;
+  padding: 24px;
+  width: 888px;
+  height: 312px;
+  background: var(--inputs);
+  list-style: none;
+}
+
+.imageFrame {
+  position: relative;
+  flex-shrink: 0;
+  align-self: center;
+  border-radius: 16px;
+  width: 219px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 524px;
+  height: 264px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 524px;
+  height: 64px;
+}
+
+.name {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 133%;
+  color: var(--main);
+  height: 32px;
+  overflow: hidden;
+}
+
+.price {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 133%;
+  color: var(--main);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 24px;
+}
+
+.rating,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--main);
+  height: 24px;
+  white-space: nowrap;
+}
+
+.rating svg,
+.location svg {
+  flex-shrink: 0;
+}
+
+.description {
+  margin-top: 24px;
+  width: 525px;
+  height: 24px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  height: 48px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  height: 48px;
+  background: var(--badges);
+  mix-blend-mode: multiply;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  color: var(--main);
+  white-space: nowrap;
+}
+
+.showMore {
+  margin-top: 24px;
+}
