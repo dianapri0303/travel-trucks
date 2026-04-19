@@ -11,39 +11,16 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
-import { getCamperById } from '@/lib/api';
+import { getCamperById, getCamperReviews } from '@/lib/api';
+import {
+  ENGINE_LABELS,
+  TRANSMISSION_LABELS,
+  FORM_LABELS,
+  AMENITY_LABELS,
+} from '@/lib/labels';
+import ReviewCard from '@/components/ReviewCard/ReviewCard';
+import BookingForm from '@/components/BookingForm/BookingForm';
 import css from './page.module.css';
-
-const ENGINE_LABELS: Record<string, string> = {
-  diesel: 'Diesel',
-  petrol: 'Petrol',
-  hybrid: 'Hybrid',
-  electric: 'Electric',
-};
-
-const TRANSMISSION_LABELS: Record<string, string> = {
-  automatic: 'Automatic',
-  manual: 'Manual',
-};
-
-const FORM_LABELS: Record<string, string> = {
-  alcove: 'Alcove',
-  panel_van: 'Panel Van',
-  integrated: 'Integrated',
-  semi_integrated: 'Semi-Integrated',
-};
-
-const AMENITY_LABELS: Record<string, string> = {
-  ac: 'AC',
-  bathroom: 'Bathroom',
-  kitchen: 'Kitchen',
-  tv: 'TV',
-  radio: 'Radio',
-  refrigerator: 'Refrigerator',
-  microwave: 'Microwave',
-  gas: 'Gas',
-  water: 'Water',
-};
 
 export default function CamperDetailsPage() {
   const { camperId } = useParams<{ camperId: string }>();
@@ -56,6 +33,12 @@ export default function CamperDetailsPage() {
   } = useQuery({
     queryKey: ['camper', camperId],
     queryFn: () => getCamperById(camperId),
+    enabled: !!camperId,
+  });
+
+  const { data: reviews = [] } = useQuery({
+    queryKey: ['reviews', camperId],
+    queryFn: () => getCamperReviews(camperId),
     enabled: !!camperId,
   });
 
@@ -199,6 +182,19 @@ export default function CamperDetailsPage() {
           </div>
         </div>
       </div>
+      <section className={css.bottomSection}>
+        <h2 className={css.reviewsTitle}>Reviews</h2>
+        <div className={css.bottomRow}>
+          <ul className={css.reviewsList}>
+            {reviews.map(review => (
+              <li key={review.id}>
+                <ReviewCard review={review} />
+              </li>
+            ))}
+          </ul>
+          <BookingForm camperId={camperId} />
+        </div>
+      </section>
     </main>
   );
 }

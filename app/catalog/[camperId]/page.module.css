@@ -201,3 +201,32 @@
   line-height: 150%;
   color: var(--main);
 }
+
+.bottomSection {
+  margin-top: 88px;
+  width: 1312px;
+}
+
+.reviewsTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--main);
+}
+
+.bottomRow {
+  display: flex;
+  gap: 48px;
+  margin-top: 24px;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 623px;
+}

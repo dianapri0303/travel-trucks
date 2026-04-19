@@ -1,26 +1,8 @@
 import Image from 'next/image';
 import Button from '@/components/Button/Button';
 import type { CamperListItem } from '@/types/camper';
+import { ENGINE_LABELS, TRANSMISSION_LABELS, FORM_LABELS } from '@/lib/labels';
 import css from './CamperCard.module.css';
-
-const ENGINE_LABELS: Record<string, string> = {
-  diesel: 'Diesel',
-  petrol: 'Petrol',
-  hybrid: 'Hybrid',
-  electric: 'Electric',
-};
-
-const TRANSMISSION_LABELS: Record<string, string> = {
-  automatic: 'Automatic',
-  manual: 'Manual',
-};
-
-const FORM_LABELS: Record<string, string> = {
-  alcove: 'Alcove',
-  panel_van: 'Panel Van',
-  integrated: 'Integrated',
-  semi_integrated: 'Semi-Integrated',
-};
 
 type Props = {
   camper: CamperListItem;

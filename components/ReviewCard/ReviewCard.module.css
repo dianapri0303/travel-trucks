@@ -1,0 +1,77 @@
+.card {
+  border-radius: 16px;
+  padding: 16px;
+  width: 623px;
+  background: var(--inputs);
+  display: flex;
+  flex-direction: column;
+}
+
+.topGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 172px;
+  height: 60px;
+}
+
+.avatar {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: var(--white);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initial {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--grey-green);
+}
+
+.nameGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 96px;
+  height: 44px;
+  justify-content: center;
+}
+
+.name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.starFilled {
+  color: var(--rating);
+  flex-shrink: 0;
+}
+
+.starEmpty {
+  color: var(--gray-light);
+  flex-shrink: 0;
+}
+
+.comment {
+  margin-top: 16px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}
